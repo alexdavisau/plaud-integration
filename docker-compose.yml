@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  plaud-receiver:
+    build:
+      context: ..
+      dockerfile: plaud-integration/Dockerfile
+    container_name: plaud-receiver
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./inbox:/app/plaud-integration/inbox
+    restart: always
